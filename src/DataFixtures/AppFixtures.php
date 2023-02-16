@@ -2,8 +2,6 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Metadata;
-use App\Entity\Product;
 use App\Factory\CommentFactory;
 use App\Factory\ProductFactory;
 use App\Factory\TagFactory;

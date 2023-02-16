@@ -1,0 +1,12 @@
+@import 'bootstrap';
+
+:root {
+    --primary: 173, 123, 233;
+    --secondary: 62, 84, 172;
+    --there: 191, 220, 229;
+    --light: 238, 238, 238;
+}
+
+body {
+    background-color: rgb(var(--light));
+}
