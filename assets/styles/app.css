@@ -10,3 +10,31 @@
 body {
     background-color: rgb(var(--light));
 }
+
+.bg-dark {
+    background-color: rgb(var(--secondary)) !important;
+}
+
+.btn-primary {
+    background-color: rgb(var(--primary));
+    border-color: rgb(var(--primary));
+}
+
+.btn-primary:hover {
+    background-color: rgba(var(--primary), .7);
+    border-color: rgba(var(--primary), .7);
+}
+
+.btn-primary:active {
+    background-color: rgba(var(--primary), .1) !important;
+    border-color: rgb(var(--primary)) !important;
+    color: var(--primary) !important;
+}
+
+/* .card-product {
+    min-height: 240px;
+}
+
+.card-product .card-title {
+    font-size: 1.15rem;
+} */

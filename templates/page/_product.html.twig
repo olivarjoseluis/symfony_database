@@ -1,0 +1,22 @@
+<div class="col-12">
+	<div class="card card-product mb-4">
+		<div class="card-body">
+			<h5 class="card-title">{{product.name}}</h5>
+			<p class="card-text">{{product.summary}}</p>
+			<a href="#" class="card-link">See more</a>
+			<hr>
+			<p class="text-muted">
+				{{product.comments|length}}
+				{% if (product.comments|length)==1 %}
+					Comment
+				{% else %}
+					Comments
+				{% endif %}
+				|
+				{% for tag in product.tags %}
+					<a href="{{path('app_tag',{id:tag.id})}}" class="badge text-dark bg-light text-decoration-none">{{tag.name}}</a>
+				{% endfor %}
+			</p>
+		</div>
+	</div>
+</div>
