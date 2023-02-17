@@ -14,7 +14,12 @@
 				{% endif %}
 				|
 				{% for tag in product.tags %}
-					<a href="{{path('app_tag',{id:tag.id})}}" class="badge text-dark bg-light text-decoration-none">{{tag.name}}</a>
+					<a href="{{path('app_home',{tag:tag.name})}}" class="badge text-decoration-none {{
+																																				tag.name == app.request.get('tag') ?
+																																				'text-white bg-dark'
+																																				:
+																														'text-dark bg-light'
+																																			}}">{{tag.name}}</a>
 				{% endfor %}
 			</p>
 		</div>

@@ -18,7 +18,7 @@
 	<div class="row">
 		{% for tag in tags %}
 			<div class="col-6 col-md-4">
-				<a href="{{path('app_tag',{id:tag.id})}}" class="text-decoration-none">
+				<a href="{{path('app_home',{tag:tag.name})}}" class="text-decoration-none">
 					<div class="mb-4 bg-dar text-dark card card-tags">
 						<img src="https://picsum.photos/200" alt="tag.name" class="card-img-top">
 						<div class="card-body">
