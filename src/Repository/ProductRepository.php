@@ -41,12 +41,23 @@ class ProductRepository extends ServiceEntityRepository
 
     public function findLatest(): array
     {
-        $query = $this->getEntityManager()->createQuery(
-            'SELECT p FROM App\Entity\Product p ORDER BY p.id DESC'
-        )->setMaxResults(12);
+        // $dql = 'SELECT p FROM App\Entity\Product p ORDER BY p.id DESC';
+        //$query = $this->getEntityManager()->createQuery($dql)->setMaxResults(12);
 
         //dd($query->getResult());
-        return $query->getResult();
+        //dd($query->getSQL());
+        //createQueryBuilder
+        return $this->createQueryBuilder('product')
+            ->addSelect('Comments', 'tags')
+            ->leftJoin('product.Comments', 'Comments')
+            ->leftJoin('product.tags', 'tags')
+            ->orderBy('product.id', 'DESC')
+            ->getQuery()
+            ->getResult();
+        //dd($query->getResult());
+        //dd($query->getDQL());
+
+        
     }
 
     //    /**
