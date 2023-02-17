@@ -3,7 +3,7 @@
 		<div class="card-body">
 			<h5 class="card-title">{{product.name}}</h5>
 			<p class="card-text">{{product.summary}}</p>
-			<a href="#" class="card-link">See more</a>
+			<a href="{{path('app_product',{id:product.id})}}" class="card-link">See more</a>
 			<hr>
 			<p class="text-muted">
 				{{product.comments|length}}
