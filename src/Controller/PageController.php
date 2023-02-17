@@ -21,7 +21,7 @@ class PageController extends AbstractController
       'page/home.html.twig',
       [
         'title' => 'Home',
-        'products' => $entityManager->getRepository(Product::class)->findAll()
+        'products' => $entityManager->getRepository(Product::class)->findLatest()
       ]
     );
   }
