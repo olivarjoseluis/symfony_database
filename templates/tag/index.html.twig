@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ title }}
+	| DataBase Site
+{% endblock %}
+{% block breadcrumb %}
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb mx-1">
+			<li class="breadcrumb-item">
+				<a href="{{path('app_home')}}">Home</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">{{title}}</li>
+		</ol>
+	</nav>
+{% endblock %}
+{% block body %}
+	<div class="row">
+		{% for tag in tags %}
+			<div class="col-6 col-md-4">
+				<a href="{{path('app_tag',{id:tag.id})}}" class="text-decoration-none">
+					<div class="mb-4 bg-dar text-dark card card-tags">
+						<img src="https://picsum.photos/200" alt="tag.name" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title text-center">{{tag.name}}</h5>
+						</div>
+					</div>
+				</a>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}
